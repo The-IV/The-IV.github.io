@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Floyd Iglehart Portfolio Website</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="https://kit.fontawesome.com/623c918709.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <!--Nav Bar-->
+        <nav>
+            <ul id="sidemenu">
+                <li><a href="#header">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
+            </ul>
+            <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+        </nav>
+        <!--Nav Bar-->
+
+        <!--Header-->
+        <div id="header">
+            <div class="container">
+                <div class="header-text">
+                    <p>Developer</p>
+                    <h1>Hey! - I'm <span>Floyd</span> a developer and creative based in Houston, TX.
+                    <br>I make apps, design websites, and engineer audio — blending tech and creativity to bring ideas to life.</h1>
+                </div>
+            </div>
+        </div>
+        <!--Header-->
+
+        <!--About-->
+        <div id="about"> 
+            <div class="container">
+                <div class="row">
+                    <div class="about-col-1">
+                        <img src="Images/coverphoto.jpg" alt="Floyd Iglehart profile picture">
+                    </div>
+                    <div class="about-col-2">
+                        <h1 class="sub-title">About Me</h1>
+                        <p>I’m Floyd — a recent Computer Science graduate from the University of Houston (Fall 2024) with a passion for building thoughtful, user-focused software.
+                            I'm currently pursuing opportunities in software development, with hands-on experience in Python, C++, C#, and Swift. My skill set also includes front-end web development, using HTML, CSS, and JavaScript to build and design responsive, clean interfaces — like the site you're visiting right now.
+                            Outside of coursework, I’ve applied my development skills to real-world projects, including a solo-developed finance app launching soon on the Apple App Store. It's designed to help service workers manage their finances more effectively. After working in the service industry for over a year, I understand firsthand the unique challenges of budgeting with an inconsistent income.
+                            In addition to coding, I produce music and engineer artists, blending creativity and technical problem-solving across mediums. Whether I’m refining a piece of code or a mix, I bring the same attention to detail and drive to improve.
+                            Thanks for stopping by — feel free to reach out if you'd like to collaborate, chat, or learn more about what I'm working on.</p>
+
+                        <div class="tab-titles">
+                            <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                            <p class="tab-links" onclick="opentab('education')">Education</p>
+                        </div>
+                        <div class="tab-contents active-tab" id="skills">
+                            <ul>
+                                <li><span>Front-End Development</span><br>Designing Web/App Interfaces</li>
+                                <li><span>Audio Engineering</span><br>Music Production and Mastering</li>
+                                <li><span>App Development</span><br>iOS Application Design and Deployment</li>
+                            </ul>
+                        </div>
+                        <div class="tab-contents" id="education">
+                            <ul>
+                                <li><span>2021-2024</span><br>BS in Computer Science from the University of Houston</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--About-->
+
+        <!--Services-->
+        <div id="services" class="anchor-offset">
+            <div class="container">
+                <h1 class="sub-title">My Services</h1>
+                <div class="services-list">
+                    <div>
+                        <i class="fa-solid fa-code"></i>
+                        <h2>Web Design</h2>
+                        <p>I create clean, responsive websites using HTML, CSS, and JavaScript — built with both usability and aesthetics in mind. From portfolios and project showcases (like this one) to online storefronts, I ensure each site reflects its purpose and personality. Whether you're starting from scratch or need a redesign, I can bring your vision to life.</p>
+                    </div>
+                    <div>
+                        <i class="fa-solid fa-headphones"></i>
+                        <h2>Audio Engineering</h2>
+                        <p>With a background of 9 years in music production and mixing, I offer audio engineering services for artists, podcasts, and game projects. I specialize in clean, balanced mixes and know how to elevate raw recordings into polished audio. If you need a sound that's crisp, immersive, and release-ready — I’ve got you covered.</p>
+                    </div>
+                    <div>
+                        <i class="fa-brands fa-swift"></i>
+                        <h2>App Design</h2>
+                        <p>From concept to launch, I design and develop functional, user-centered applications. I’ve solo-developed an iOS budgeting app aimed at helping service workers manage their finances. I also co-Led an 8-person game development team where I contributed to both design and engineering. I also build utility tools, like a Discord bot for Slay the Spire, to assist players through a deckbiulding roguelike.</p>
+                        <a href="#portfolio">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Services-->
+
+        <!--Portfolio-->
+        <div id="portfolio" class="anchor-offset">
+            <div class="container">
+                <h1 class="sub-title">My Work</h1>
+                <div class="work-list">
+                    <div class="work">
+                        <img src="Images/frogforcelogo.jpg" alt="Student Game Project Logo">
+                        <div class="layer">
+                            <h3>Student Game Project</h3>
+                            <p>An 8-Person group project my fellow peers and I produced over the timespan of one academic semester.</p>
+                            <a href="game_project.html"><i class="fa-solid fa-gamepad"></i></a>
+                        </div>
+                    </div>
+                    <div class="work">
+                        <img src="Images/TipsIOJar.png" alt="TipsIO App Logo">
+                        <div class="layer">
+                            <h3>Finance Tracking App</h3>
+                            <p>iOS app developed with tip-based careers in mind.</p>
+                            <a href="finance_tracker.html"><i class="fa-solid fa-dollar-sign"></i></a>
+                        </div>
+                    </div>
+                    <div class="work">
+                        <img src="Images/SpireCaw.jpg" alt="Slay The Spire Bot Logo">
+                        <div class="layer">
+                            <h3>Slay The Spire Bot</h3>
+                            <p>Solo discord bot project to help assist new players through a procedurally generated deckbuilding game.</p>
+                            <a href="spire_assistant.html"><i class="fa-solid fa-robot"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Portfolio-->
+
+        <!--Contact-->
+        <div id="contact">
+            <div class="container">
+                <div class="row">
+                    <div class="contact-left">
+                        <h1 class="sub-title">Contact Me</h1>
+                        <p><i class="fa-solid fa-paper-plane"></i> floydiv007@gmail.com</p>
+                        <div class="social-icons">
+                            <a href="https://www.instagram.com/the_i.v/" target="_blank" rel="noopener noreferrer" aria-label="Instagram profile">
+                                <i class="fa-brands fa-instagram"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/in/floyd-iglehart-8766b528b/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile">
+                                <i class="fa-brands fa-linkedin"></i>
+                            </a>
+                        </div>
+                        <a href="Images/ResumeFall2025.pdf" download class="btn btn2">Download CV</a>
+                    </div>
+                    <div class="contact-right">
+                        <form name="submit-to-google-sheet">
+                            <label for="name">Name</label>
+                            <input id="name" type="text" name="Name" placeholder="Your Name" required>
+
+                            <label for="email">Email</label>
+                            <input id="email" type="text" name="Email" placeholder="Your Email" required>
+
+                            <label for="message">Message</label>
+                            <textarea id="message" name="Message" rows="6" placeholder="Your Message"></textarea>
+                            <button type="submit" class="btn btn2">Submit</button>
+                        </form>
+                        <span id="msg"></span>
+                    </div>
+                </div>
+            </div>
+            <footer class="copyright">
+                <p>&copy; Floyd Iglehart IV</p>
+            </footer>
+        </div>
+        <!--Contact-->
+        
+    <!--JavaScript for interactivity-->
+    <script>
+        var tablinks = document.getElementsByClassName('tab-links');
+        var tabcontents = document.getElementsByClassName('tab-contents');
+        function opentab(tabName) {
+            for(tablink of tablinks) {
+                tablink.classList.remove("active-link");
+            }
+            for(tabcontent of tabcontents) {
+                tabcontent.classList.remove("active-tab");
+            }
+            event.currentTarget.classList.add("active-link");
+            document.getElementById(tabName).classList.add("active-tab")
+        }
+    </script>
+
+    <script>
+        var sidemenu = document.getElementById("sidemenu");
+
+        function openmenu(){
+            sidemenu.style.left = "0";
+        }
+        function closemenu(){
+            sidemenu.style.left = "-200px";
+        }
+
+    </script>
+
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbyd3Ow3NyOqY9zvXVbjvzLAcfjqTlR3kg70NWqdCfoMJaElRL4eumy-alcr3RdcRREdDg/exec'
+        const form = document.forms['submit-to-google-sheet']
+        const msg = document.getElementById("msg")
+    
+        form.addEventListener('submit', e => {
+        e.preventDefault()
+        fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => {
+                msg.innerHTML = "Message sent successfully"
+                setTimeout(function(){
+                    msg.innerHTML = ""
+                },5000)
+                form.reset()
+            })
+            .catch(error => console.error('Error!', error.message))
+        })
+    </script>
+    <!--JavaScript for interactivity-->
+
+    </body>
+</html>

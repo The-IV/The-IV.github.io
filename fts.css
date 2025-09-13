@@ -1,0 +1,140 @@
+/* Reset styles */
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', 'sans-serif';
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    padding: 80px 0 0 0;
+    min-height: 100vh;            /* allow scrolling if content is taller */
+    display: flex;
+    flex-direction: column;       /* stack children vertically */
+    align-items: center;          /* center horizontally */
+    justify-content: center;
+    text-align: center;
+    color: white;
+    font-family: Arial, sans-serif;
+    position: relative;
+    overflow-x: hidden;           /* let it scroll vertically but not horizontally */
+}
+
+
+/* Background image scales based on width */
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: auto;
+    min-height: 100vh;
+    background: url('Images/TipsIOJar.png') no-repeat center center;
+    background-size: contain; /* Scale based on width */
+    opacity: 0.5;
+    z-index: -1;
+}
+
+/* Keep back button in the top-left */
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(8,8,8,1.0);
+    z-index: 9999;
+    padding: 20px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+nav::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 20px; /* Adjust as needed for visual effect */
+    background: linear-gradient(to top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1.0) 100%);
+    pointer-events: none; /* So it doesn't interfere with interaction */
+}
+.logo {
+    width: 140px;
+}
+nav ul li {
+    display: inline-block;
+    list-style: none;
+    margin: 10px 20px;
+}
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    position: relative;
+    z-index: 1000;
+}
+nav ul li a::after {
+    content: '';
+    width: 0;
+    height: 3px;
+    background: #9a25be;
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    z-index: 1000;
+}
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+.back-button {
+    display: inline-block;
+    padding: 10px 15px;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.back-button:hover {
+    background: rgba(0, 0, 0, 0.9);
+}
+
+/* Center content */
+.container {
+    position: relative  ;
+    display:block;
+    width: 80%;
+    max-width: 600px;
+    margin: 20px auto;
+    background: rgba(0, 0, 0, 0.6); /* Improves readability */
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.list-container {
+    width: 80%;
+    text-align: left;
+    margin: 0 auto;
+    max-width: 500px;
+}
+
+/* Style the download button */
+.btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background: #9a25be;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.btn:hover {
+    background: #621879;
+}
