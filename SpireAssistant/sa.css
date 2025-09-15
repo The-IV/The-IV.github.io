@@ -5,21 +5,21 @@
     font-family: 'Poppins', 'sans-serif';
     box-sizing: border-box;
 }
+
 body {
     margin: 0;
-    padding: 80px 0 0 0;
-    min-height: 100vh;            /* allow scrolling if content is taller */
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
     display: flex;
-    flex-direction: column;       /* stack children vertically */
-    align-items: center;          /* center horizontally */
     justify-content: center;
+    align-items: center;
     text-align: center;
     color: white;
     font-family: Arial, sans-serif;
     position: relative;
-    overflow-x: hidden;           /* let it scroll vertically but not horizontally */
+    overflow: hidden;
 }
-
 
 /* Background image scales based on width */
 body::before {
@@ -30,7 +30,7 @@ body::before {
     width: 100vw;
     height: auto;
     min-height: 100vh;
-    background: url('Images/TipsIOJar.png') no-repeat center center;
+    background: url('../Images/SpireCaw.jpg') no-repeat center center;
     background-size: contain; /* Scale based on width */
     opacity: 0.5;
     z-index: -1;
@@ -59,9 +59,6 @@ nav::after {
     height: 20px; /* Adjust as needed for visual effect */
     background: linear-gradient(to top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1.0) 100%);
     pointer-events: none; /* So it doesn't interfere with interaction */
-}
-.logo {
-    width: 140px;
 }
 nav ul li {
     display: inline-block;
@@ -106,21 +103,48 @@ nav ul li a:hover::after {
 
 /* Center content */
 .container {
-    position: relative  ;
-    display:block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     width: 80%;
     max-width: 600px;
-    margin: 20px auto;
     background: rgba(0, 0, 0, 0.6); /* Improves readability */
     padding: 20px;
     border-radius: 10px;
 }
 
 .list-container {
-    width: 80%;
+    width: 40%;
     text-align: left;
     margin: 0 auto;
     max-width: 500px;
+}
+
+.contacts {
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    max-width: 600px;
+    background: rgba(0, 0, 0, 0.6); /* Improves readability */
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.contact {
+    display:inline-flex;
+    padding: 5px;
+    background: #9a25be;
+    color: white;
+    text-decoration: none;
+    font-size: 16px; 
+    border-radius: 10px;
+}
+
+.contact:hover {
+    background: #621879;
 }
 
 /* Style the download button */
@@ -137,4 +161,8 @@ nav ul li a:hover::after {
 
 .btn:hover {
     background: #621879;
+}
+
+h2 {
+    margin-top: 20px;
 }

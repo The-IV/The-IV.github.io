@@ -28,7 +28,7 @@ body::before {
     left: 0;
     width: 100vw;
     height: 100vh;
-    background: url('Images/frogforcelogo.jpg') no-repeat center center;
+    background: url('../Images/frogforcelogo.jpg') no-repeat center center;
     background-size: contain;
     opacity: 0.5;
     z-index: -1;
