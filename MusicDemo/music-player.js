@@ -9,7 +9,27 @@ const duration = document.getElementById("duration");
 const seekBar = document.getElementById("seek-bar");
 const togglePlay = document.getElementById("toggle-play");
 
+const bgLayers = [
+    document.getElementById("bg-a"),
+    document.getElementById("bg-b")
+];
+let activeLayer = 0;
+let currentBg = "";
+
 let currentIndex = -1;
+
+function setBackground(bgClass) {
+    if (bgClass === currentBg) return;
+
+    const prev = bgLayers[activeLayer];
+    const next = bgLayers[1 - activeLayer];
+
+    next.className = "bg-layer" + (bgClass ? ` ${bgClass} visible` : "");
+    prev.classList.remove("visible");
+
+    activeLayer = 1 - activeLayer;
+    currentBg = bgClass;
+}
 
 function formatTime(seconds) {
     if (!Number.isFinite(seconds)) return "0:00";
@@ -68,6 +88,8 @@ async function playTrack(index) {
         tracks.forEach((item, i) => {
             item.classList.toggle("active", i === index);
         });
+
+        setBackground(track.dataset.bg);
 
         seekBar.value = 0;
         currentTime.textContent = "0:00";
@@ -144,6 +166,7 @@ audio.addEventListener("ended", () => {
         playTrack(currentIndex + 1);
     } else {
         updatePlayButton(false);
+        setBackground("");
     }
 });
 
