@@ -1,5 +1,70 @@
 
 const audio = document.getElementById("audio-player");
+const albumsContainer = document.getElementById("albums");
+
+function buildAlbums() {
+    albums.forEach(album => {
+        const section = document.createElement("section");
+        section.className = "album";
+        section.setAttribute("aria-labelledby", `album-${album.id}`);
+
+        const count = album.tracks.length;
+
+        section.innerHTML = `
+            <header class="album-header">
+                <div class="album-cover">
+                    ${album.cover ? "" : `<i class="fa-solid ${album.icon || "fa-compact-disc"}"></i>`}
+                </div>
+                <div class="album-meta">
+                    <p class="album-eyebrow">${count} ${count === 1 ? "track" : "tracks"}</p>
+                    <h2 class="album-title" id="album-${album.id}"></h2>
+                    <p class="album-desc"></p>
+                </div>
+            </header>
+            <div class="track-list"></div>
+        `;
+
+        section.querySelector(".album-cover").style.backgroundImage =
+            album.cover ? `url("${album.cover}")` : (album.bg || "none");
+        section.querySelector(".album-title").textContent = album.title;
+        section.querySelector(".album-desc").textContent = album.description || "";
+
+        const list = section.querySelector(".track-list");
+
+        album.tracks.forEach(t => {
+            const row = document.createElement("div");
+            row.className = "track-row";
+            row.dataset.src = t.src;
+            row.dataset.bg = t.bg || album.bg || "";
+            row.dataset.album = album.title;
+
+            row.innerHTML = `
+                <div class="track-art">
+                    <i class="fa-solid ${t.icon || album.icon || "fa-music"}"></i>
+                </div>
+                <div class="track-info">
+                    <h2></h2>
+                    <p></p>
+                </div>
+                <button class="track-play">
+                    <i class="fa-solid fa-play"></i>
+                </button>
+            `;
+
+            row.querySelector("h2").textContent = t.title;
+            row.querySelector("p").textContent = t.subtitle || "";
+            row.querySelector(".track-play")
+                .setAttribute("aria-label", `Play ${t.title}`);
+
+            list.appendChild(row);
+        });
+
+        albumsContainer.appendChild(section);
+    });
+}
+
+buildAlbums();
+
 const tracks = [...document.querySelectorAll(".track-row")];
 
 const currentTitle = document.getElementById("current-title");
@@ -18,17 +83,18 @@ let currentBg = "";
 
 let currentIndex = -1;
 
-function setBackground(bgClass) {
-    if (bgClass === currentBg) return;
+function setBackground(bg) {
+    if (bg === currentBg) return;
 
     const prev = bgLayers[activeLayer];
     const next = bgLayers[1 - activeLayer];
 
-    next.className = "bg-layer" + (bgClass ? ` ${bgClass} visible` : "");
+    next.style.backgroundImage = bg || "none";
+    next.className = "bg-layer" + (bg ? " visible" : "");
     prev.classList.remove("visible");
 
     activeLayer = 1 - activeLayer;
-    currentBg = bgClass;
+    currentBg = bg;
 }
 
 function formatTime(seconds) {
@@ -83,7 +149,7 @@ async function playTrack(index) {
             track.querySelector("h2").textContent;
 
         currentStatus.textContent =
-            track.querySelector("p").textContent;
+        `${track.dataset.album} • ${track.querySelector("p").textContent}`;
 
         tracks.forEach((item, i) => {
             item.classList.toggle("active", i === index);

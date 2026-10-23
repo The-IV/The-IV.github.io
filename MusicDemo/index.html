@@ -28,69 +28,8 @@
                 </p>
             </header>
 
-            <section class="track-section" aria-label="Music tracks">
-
-                <div class="track-row"
-                    data-src="../Music/Audio/JSL.mp3" data-bg="bg-track-1">
-                    <div class="track-art">
-                        <i class="fa-solid fa-wave-square"></i>
-                    </div>
-                    <div class="track-info">
-                        <h2>Demo Track 1</h2>
-                        <p>Production Demo</p>
-                    </div>
-                    <button class="track-play"
-                            aria-label="Play Demo Track 1">
-                        <i class="fa-solid fa-play"></i>
-                    </button>
-                </div>
-
-                <div class="track-row"
-                    data-src="../Music/Audio/Comp 3.mp3" data-bg="bg-track-2">
-                    <div class="track-art">
-                        <i class="fa-solid fa-sliders"></i>
-                    </div>
-                    <div class="track-info">
-                        <h2>Demo Track 2</h2>
-                        <p>Mixing Demo</p>
-                    </div>
-                    <button class="track-play"
-                            aria-label="Play Demo Track 2">
-                        <i class="fa-solid fa-play"></i>
-                    </button>
-                </div>
-
-                <div class="track-row"
-                    data-src="../Music/Audio/Dancehall Pass.mp3" data-bg="bg-track-3">
-                    <div class="track-art">
-                        <i class="fa-solid fa-compact-disc"></i>
-                    </div>
-                    <div class="track-info">
-                        <h2>Demo Track 3</h2>
-                        <p>Genre Exploration</p>
-                    </div>
-                    <button class="track-play"
-                            aria-label="Play Demo Track 3">
-                        <i class="fa-solid fa-play"></i>
-                    </button>
-                </div>
-
-                <div class="track-row"
-                    data-src="../Music/Audio/Ascend.mp3" data-bg="bg-track-4">
-                    <div class="track-art">
-                        <i class="fa-solid fa-music"></i>
-                    </div>
-                    <div class="track-info">
-                        <h2>Demo Track 4</h2>
-                        <p>Original Production</p>
-                    </div>
-                    <button class="track-play"
-                            aria-label="Play Demo Track 4">
-                        <i class="fa-solid fa-play"></i>
-                    </button>
-                </div>
-
-            </section>
+            <div id="albums"></div>
+            
         </main>
 
         <section class="music-player" aria-label="Audio player">
@@ -139,6 +78,7 @@
 
         <audio id="audio-player" preload="metadata"></audio>
 
+        <script src="albums.js"></script>
         <script src="music-player.js"></script>
     </body>
 
