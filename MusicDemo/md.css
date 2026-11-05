@@ -2,7 +2,7 @@
 *{
     margin: 0;
     padding: 0;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Poppins', 'sans-serif';
     box-sizing: border-box;
 }
 body {
@@ -15,7 +15,6 @@ body {
     align-items: center;
     text-align: center;
     color: white;
-    font-family: Arial, sans-serif;
     position: relative;
     overflow: hidden;
 }
@@ -28,7 +27,7 @@ body::before {
     left: 0;
     width: 100vw;
     height: 100vh;
-    background: url('../Images/TempLogo.png') no-repeat center center;
+    background: rgba(8,8,8,1.0);
     background-size: contain;
     opacity: 0.5;
     z-index: -1;
@@ -66,7 +65,8 @@ nav ul li {
 nav ul li a {
     color: #fff;
     text-decoration: none;
-    font-size: 18px;
+    font-size: 20px;
+    font-family: 'sans-serif';
     position: relative;
     z-index: 1000;
 }
@@ -97,52 +97,6 @@ nav ul li a:hover::after {
 
 .back-button:hover {
     background: rgba(0, 0, 0, 0.9);
-}
-
-/* Center content */
-.container {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 80%;
-    max-width: 600px;
-    background: rgba(0, 0, 0, 0.6); /* Improves readability */
-    padding: 20px;
-    border-radius: 10px;
-}
-
-.list-container {
-    width: 35%;
-    text-align: left;
-    margin: 0 auto;
-    max-width: 500px;
-}
-
-.contacts {
-    position: absolute;
-    bottom: 10%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 80%;
-    max-width: 600px;
-    background: rgba(0, 0, 0, 0.6); /* Improves readability */
-    padding: 10px;
-    border-radius: 10px;
-}
-
-.contact {
-    display:inline-flex;
-    padding: 5px;
-    background: #9a25be;
-    color: white;
-    text-decoration: none;
-    font-size: 16px; 
-    border-radius: 5px;
-}
-
-.contact:hover {
-    background: #621879;
 }
 
 /* Style the download button */
@@ -196,8 +150,7 @@ a.contact {
     position: fixed;
     width: 100%;
     height: 100%;
-    background: url('../Images/TempLogo.png')
-                no-repeat center center;
+    background: rgba(8,8,8,1.0);
     background-size: cover;
     opacity: 0.12;
     pointer-events: none;
@@ -223,7 +176,7 @@ a.contact {
 
 .eyebrow {
     color: #c084fc;
-    font-size: 12px;
+    font-size: 16px;
     font-weight: 600;
     letter-spacing: 2px;
     margin-bottom: 10px;

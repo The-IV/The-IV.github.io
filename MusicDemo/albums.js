@@ -40,14 +40,14 @@ const albums = [
         tracks: [
             {
                 title: "Mixed Signals",
-                subtitle: "Unreleased preview of work with BluNo",
+                subtitle: "Unreleased preview of work with Bluto",
                 src: "../Music/Audio/MixedSignalsSnippet(Clean).mp3",
                 icon: "fa-music",
                 bg: "linear-gradient(135deg, #f77f00, #d62828 60%, #6a040f)"
             },
             {
                 title: "Let Go",
-                subtitle: "Original Production",
+                subtitle: "Personal project",
                 src: "../Music/Audio/LetGoSnippet(Clean).mp3",
                 icon: "fa-music",
                 bg: "linear-gradient(135deg, #f77f00, #d62828 60%, #6a040f)"
