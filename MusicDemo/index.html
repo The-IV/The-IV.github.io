@@ -5,7 +5,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Music Demo</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
         <link rel="stylesheet" href="md.css">
     </head>
     
@@ -74,6 +76,19 @@
                     <span id="duration">0:00</span>
                 </div>
             </div>
+
+        <div class="volume-control">
+            <button id="mute-toggle" aria-label="Mute">
+                <i class="fa-solid fa-volume-high"></i>
+            </button>
+            <input id="volume-slider"
+                type="range"
+                min="0"
+                max="100"
+                value="100"
+                step="1"
+                aria-label="Volume">
+        </div>
         </section>
 
         <audio id="audio-player" preload="metadata"></audio>

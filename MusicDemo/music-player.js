@@ -1,6 +1,8 @@
 
 const audio = document.getElementById("audio-player");
 const albumsContainer = document.getElementById("albums");
+const volumeSlider = document.getElementById("volume-slider");
+const muteToggle = document.getElementById("mute-toggle");
 
 function buildAlbums() {
     albums.forEach(album => {
@@ -133,6 +135,52 @@ function updatePlayButton(playing) {
     });
 }
 
+/* Volume */
+function updateVolumeUI() {
+    const level = audio.muted ? 0 : audio.volume;
+    volumeSlider.value = level * 100;
+
+    const icon = muteToggle.querySelector("i");
+    icon.className =
+        level === 0   ? "fa-solid fa-volume-xmark" :
+        level < 0.5   ? "fa-solid fa-volume-low"   :
+                        "fa-solid fa-volume-high";
+
+    muteToggle.setAttribute("aria-label", level === 0 ? "Unmute" : "Mute");
+}
+
+// Restore the listener's last volume (default 80%)
+audio.volume = 0.8;
+try {
+    const saved = parseFloat(localStorage.getItem("playerVolume"));
+    if (Number.isFinite(saved)) {
+        audio.volume = Math.min(1, Math.max(0, saved));
+    }
+} catch (e) {}
+updateVolumeUI();
+
+volumeSlider.addEventListener("input", () => {
+    audio.muted = false;
+    audio.volume = Number(volumeSlider.value) / 100;
+});
+
+muteToggle.addEventListener("click", () => {
+    if (audio.muted || audio.volume === 0) {
+        audio.muted = false;
+        if (audio.volume === 0) audio.volume = 0.5;
+    } else {
+        audio.muted = true;
+    }
+});
+
+// Fires for slider moves, mute toggles, and any other volume change
+audio.addEventListener("volumechange", () => {
+    updateVolumeUI();
+    try {
+        localStorage.setItem("playerVolume", audio.volume);
+    } catch (e) {}
+});
+
 async function playTrack(index) {
     if (index < 0 || index >= tracks.length) return;
 
@@ -148,8 +196,7 @@ async function playTrack(index) {
         currentTitle.textContent =
             track.querySelector("h2").textContent;
 
-        currentStatus.textContent =
-        `${track.dataset.album} • ${track.querySelector("p").textContent}`;
+        currentStatus.textContent =track.dataset.album;
 
         tracks.forEach((item, i) => {
             item.classList.toggle("active", i === index);

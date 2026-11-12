@@ -58,7 +58,7 @@ const albums = [
         id: "instrumentals",
         title: "Intrumental Previews",
         description: "Previews of instrumental tracks produced by me",
-        icon: "fa-microphone-lines",
+        icon: "fa-headphones",
         cover: "",
         bg: "linear-gradient(135deg, #10002b, #5a189a 50%, #e0aaff)",
         tracks: [
