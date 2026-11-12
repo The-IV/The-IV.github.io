@@ -72,7 +72,7 @@ nav ul li {
 nav ul li a {
     color: #fff;
     text-decoration: none;
-    font-size: 18px;
+    font-size: 20px;
     position: relative;
     z-index: 1000;
 }
@@ -101,7 +101,7 @@ nav ul li a:hover::after {
     font-size: 60px;
     margin-top: 20px;
 }
-.header-text h1 span {
+.header-text h1 span, .header-text h2 span {
     color:#9a25be;
 }
 
@@ -196,6 +196,9 @@ nav ul li a:hover::after {
     border-radius: 10px;
     transition: background 0.5s, transform 0.5s;
 }
+.services-list div p {
+    font-size: 20px;
+}
 .services-list div i{
     font-size: 50px;
     margin-bottom: 30px;
@@ -208,7 +211,7 @@ nav ul li a:hover::after {
 .services-list div a{
     text-decoration: none;
     color: #fff;
-    font-size: 12px;
+    font-size: 20px;
     margin-top: 20px;
     display: inline-block;
 }
@@ -302,8 +305,12 @@ nav ul li a:hover::after {
 .contact-right{
     flex-basis: 60%;
 }
+.contact-right label{
+    font-size: 20px;
+}
 .contact-left p{
     margin-top: 30px;
+    font-size: 20px;
 }
 .contact-left p i{
     color: #9a25be;
@@ -374,7 +381,7 @@ nav .fa-solid{
 
 @media only screen and (max-width: 600px){
     #header{
-        background-image: url(Images/SmallCover.jpg);/*Replace with image that has appropriate measurements*/
+        background-image: url(Images/SmallCover.jpg);
     }
     .header-text {
         margin-top: 100%;
